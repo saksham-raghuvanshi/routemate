@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -10,6 +10,7 @@ const Contact = () => {
     <>
       <div className="component">Contact</div>
       <button onClick={handleSubmit}>Submit Form</button>
+      <Outlet />
     </>
   );
 };

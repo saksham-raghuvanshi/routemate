@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Admin from "./components/Admin";
 import Notfound from "./components/Notfound";
+import ContactIn from "./components/ConatctIn";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   const user = true;
@@ -17,7 +19,11 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />}>
+            <Route path="in" element={<ContactIn />} />
+            {/* Contact/in  Nested Route for we need to import Outlet in Contact*/}
+            <Route path="us" element={<ContactUs />} />
+          </Route>
           <Route path="/products" element={<ProductLists />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           {/* Route Parameter :id for this use useParams */}
