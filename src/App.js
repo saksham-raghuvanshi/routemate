@@ -18,7 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<ProductLists />} />
-          <Route path="/products/1001" element={<ProductDetails />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+          {/* Route Parameter :id for this use useParams */}
           <Route
             path="/admin"
             element={user ? <Admin /> : <Navigate to="/" />}
